@@ -16,11 +16,43 @@
 
 const movieDB = {
     movies: [
-        "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
-        "Одержимость",
-        "Скотт Пилигрим против..."
+        "Анальный червяк",
+        "Залупа по-оджарски",
+        "Ебанутая хуйня",
+        "Скоростные шахматы",
+        "Скотт Пилигрим против пидарасов"
     ]
 };
+
+const promoAdv = document.querySelector('.promo__adv'),
+      adds = promoAdv.querySelectorAll('img');
+      
+
+let comedy = document.getElementsByClassName('promo__genre'),
+    films = document.getElementsByClassName('promo__interactive-item'),
+    bg = document.getElementsByClassName('promo__bg');
+
+function removeAdds() {                         // Задание №1: По рофлу если что ебанул в функцию для теста
+    for (let i = 0; i < 3; i++) {
+        promoAdv.removeChild(adds[i]); 
+    }
+}
+
+removeAdds();
+
+comedy[0].innerHTML = '<div class="promo__genre">ДРАМА</div>';     // Задание №2:
+
+bg[0].style.background = 'url("../img/bg.jpg") center center/cover no-repeat';  // Задание №3:
+
+
+// function replaceFilms() {                                   //  Задание №4: не правильно и не доделано пока не ебу как
+//     for (let i = 0; i < 5; i++) {
+//         films[i].replaceWith(movieDB.movies[i]);
+//     }
+// }
+
+// console.log(movieDB);
+// console.log(films);
+
+
 
