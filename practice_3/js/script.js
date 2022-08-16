@@ -24,31 +24,36 @@ const movieDB = {
     ]
 };
 
-const promoAdv = document.querySelector('.promo__adv'),
-      adds = promoAdv.querySelectorAll('img');
+const adds = document.querySelectorAll('.promo__adv  img'),
+      bg = document.querySelector('.promo__bg'),
+      comedy = bg.querySelector('.promo__genre'),
+      films = document.querySelector('.promo__interactive-list');
 
-let comedy = document.getElementsByClassName('promo__genre'),
-    films = document.getElementsByClassName('promo__interactive-item'),
-    
-    bg = document.getElementsByClassName('promo__bg');
+adds.forEach(item => {                                          // Задание №1: 
+    item.remove();
+});                                            
 
-function removeAdds() {                         // Задание №1: По рофлу если что ебанул в функцию для теста
-    for (let i = 0; i < 3; i++) {
-        promoAdv.removeChild(adds[i]); 
-    }
-}
+comedy.textContent = 'драма';     // Задание №2:
 
-removeAdds();
+bg.style.backgroundImage = 'url("img/bg.jpg")';  // Задание №3:
 
-comedy[0].innerHTML = '<div class="promo__genre">ДРАМА</div>';     // Задание №2:
+// for (let i = 0; i < 5; i++) {                                                       // Задания №4 и №5:
+//     movieDB.movies.sort();                               
+//     films[i].textContent = `${i + 1} ${movieDB.movies[i]}`;
+//     films[i].insertAdjacentHTML('afterbegin', '<div class="delete"></div>');
+// }
 
-bg[0].style.background = 'url("../img/bg.jpg") center center/cover no-repeat';  // Задание №3:
+films.innerHTML = "";
 
-for (let i = 0; i < 5; i++) {                                                       // Задания №4 и №5:
-    movieDB.movies.sort();                               
-    films[i].innerHTML = `${i + 1} ${movieDB.movies[i]}`;
-}
+movieDB.movies.sort();
 
+movieDB.movies.forEach((film, i) => {
+    films.innerHTML += `
+        <li class="promo__interactive-item">${i + 1} ${film}
+            <div class="delete"></div>
+        </li>
+    `;
+});
 
 
 
