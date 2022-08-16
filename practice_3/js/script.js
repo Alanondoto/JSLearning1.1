@@ -27,7 +27,10 @@ const movieDB = {
 const adds = document.querySelectorAll('.promo__adv  img'),
       bg = document.querySelector('.promo__bg'),
       comedy = bg.querySelector('.promo__genre'),
-      films = document.querySelector('.promo__interactive-list');
+      films = document.querySelector('.promo__interactive-list'),
+      btn = document.querySelector('button'),
+      newFilm = document.querySelector('.adding__input');
+      
 
 adds.forEach(item => {                                          // Задание №1: 
     item.remove();
@@ -53,6 +56,20 @@ movieDB.movies.forEach((film, i) => {
             <div class="delete"></div>
         </li>
     `;
+});
+
+btn.addEventListener('click', (event) => {                          // Задание №1: Урок 33
+    event.preventDefault();
+    let newFilm = document.querySelector('.adding__input').value;
+    movieDB.movies.push(newFilm);
+    films.innerHTML = "";
+    movieDB.movies.forEach((film, i) => {
+        films.innerHTML += `
+            <li class="promo__interactive-item">${i + 1} ${film}
+                <div class="delete"></div>
+            </li>
+        `;
+    });
 });
 
 
