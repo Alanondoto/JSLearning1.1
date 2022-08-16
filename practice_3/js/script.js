@@ -54,5 +54,5 @@ bg[0].style.background = 'url("../img/bg.jpg") center center/cover no-repeat';  
 // console.log(movieDB);
 // console.log(films);
 
-
+// egegeggeegegegge
 
