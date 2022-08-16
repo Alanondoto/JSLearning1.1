@@ -16,11 +16,11 @@
 
 const movieDB = {
     movies: [
-        "Анальный червяк",
-        "Залупа по-оджарски",
-        "Ебанутая хуйня",
-        "Скоростные шахматы",
-        "Скотт Пилигрим против пидарасов"
+        "анальный червяк",
+        "залупа по-оджарски",
+        "ебанутая хуйня",
+        "скоростные шахматы",
+        "скотт Пилигрим против пидарасов"
     ]
 };
 
@@ -60,9 +60,13 @@ movieDB.movies.forEach((film, i) => {
 
 btn.addEventListener('click', (event) => {                          // Задание №1: Урок 33
     event.preventDefault();
-    const newFilm = document.querySelector('.adding__input').value;
-    movieDB.movies.push(newFilm);
+    let newFilm = document.querySelector('.adding__input').value;
+    if (newFilm.length > 21) {                                      // Задание №2: Урок 33
+        newFilm = `${newFilm.substr(0, 21)}...`;
+    }    
     films.innerHTML = "";
+    movieDB.movies.push(newFilm);
+    movieDB.movies.sort();                                          // Задание №5: Урок 33
     movieDB.movies.forEach((film, i) => {
         films.innerHTML += `
             <li class="promo__interactive-item">${i + 1} ${film}
@@ -71,9 +75,6 @@ btn.addEventListener('click', (event) => {                          // Зада�
         `;
     });
 });
-
-
-
 
 
 
