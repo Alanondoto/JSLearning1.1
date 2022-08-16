@@ -26,10 +26,10 @@ const movieDB = {
 
 const promoAdv = document.querySelector('.promo__adv'),
       adds = promoAdv.querySelectorAll('img');
-      
 
 let comedy = document.getElementsByClassName('promo__genre'),
     films = document.getElementsByClassName('promo__interactive-item'),
+    
     bg = document.getElementsByClassName('promo__bg');
 
 function removeAdds() {                         // Задание №1: По рофлу если что ебанул в функцию для теста
@@ -44,15 +44,17 @@ comedy[0].innerHTML = '<div class="promo__genre">ДРАМА</div>';     // За�
 
 bg[0].style.background = 'url("../img/bg.jpg") center center/cover no-repeat';  // Задание №3:
 
+for (let i = 0; i < 5; i++) {                                                       // Задания №4 и №5:
+    movieDB.movies.sort();                               
+    films[i].innerHTML = `${i + 1} ${movieDB.movies[i]}`;
+}
 
-// function replaceFilms() {                                   //  Задание №4: не правильно и не доделано пока не ебу как
-//     for (let i = 0; i < 5; i++) {
-//         films[i].replaceWith(movieDB.movies[i]);
-//     }
-// }
 
-// console.log(movieDB);
-// console.log(films);
 
-// egegeggeegegegge
+
+
+
+
+
+
 
