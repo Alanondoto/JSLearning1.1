@@ -339,6 +339,22 @@ window.addEventListener('DOMContentLoaded', () => {
     //     .then(data => data.json())
     //     .then(res => console.log(res));
 
+    // Slider
+
+    const leftSwipe = document.querySelector('.offer__slider-prev'),
+          rightSwipe = document.querySelector('.offer__slider-next'),
+          currentCounter = document.querySelector('#current'),
+          totalCounter = document.querySelector('#total'),
+          sliderImgs = document.querySelectorAll('.offer__slide');
+    let sliderIndex = 1;
+
+    function showSlide() {
+        for (let sliderImg of sliderImgs) {
+            
+        }
+    }
+
+    console.log(sliderImgs.length);
 });
 
 
