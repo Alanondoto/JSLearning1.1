@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Timer
 
-    const deadline = '2022-08-31';
+    const deadline = '2022-12-31';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -348,13 +348,45 @@ window.addEventListener('DOMContentLoaded', () => {
           sliderImgs = document.querySelectorAll('.offer__slide');
     let sliderIndex = 1;
 
+    if (sliderImgs.length >= 1 && sliderImgs.length < 10) {
+        totalCounter.innerHTML = `0${sliderImgs.length}`;
+    } else {
+        totalCounter.innerHTML = `${sliderImgs.length}`;
+    }
+
     function showSlide() {
         for (let sliderImg of sliderImgs) {
-            
+            sliderImg.style.display = 'none';
+        }
+        sliderImgs[sliderIndex - 1].style.display = 'block';
+        if (sliderIndex >= 1 && sliderIndex < 10) {
+            currentCounter.innerHTML = `0${sliderIndex}`;
+        } else {
+            currentCounter.innerHTML = `${sliderIndex}`;
         }
     }
 
-    console.log(sliderImgs.length);
+    showSlide();
+
+    function nextSlide() {
+        sliderIndex += 1;
+        if (sliderIndex > sliderImgs.length) {
+            sliderIndex = 1;
+        }
+        showSlide();
+    }
+
+    function previousSlide() {
+        sliderIndex -= 1;
+        if (sliderIndex < 1) {
+            sliderIndex = sliderImgs.length;
+        }
+        showSlide();
+    }
+
+    leftSwipe.addEventListener(('click'), previousSlide);
+
+    rightSwipe.addEventListener(('click'), nextSlide);
 });
 
 
