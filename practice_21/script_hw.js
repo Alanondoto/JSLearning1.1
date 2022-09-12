@@ -2,12 +2,12 @@
 
 class User {
     constructor(name, age) {
-        this.name = name;
-        this._age = age;
+        this._name = name;
+        this._age = age; 
     }
-    #surname = ' Gusev';
+    #surname = 'Gusev';
     say = () => {
-        console.log(`Имя пользователя: ${this.name}${this.#surname},  возраст: ${this._age}`);
+        console.log(`Имя пользователя: ${this._name} ${this.#surname}, Возраст: ${this._age}`);
     }
     get age() {
         return this._age; 
@@ -19,9 +19,15 @@ class User {
             console.log('Недопустимое значение!');
         }
     }
+    get surname() {
+        return this.#surname;
+    }
+    set surname(value) {
+        value = 'GGG';
+        this.#surname = value;
+        return this.#surname;
+    }
 }
-
 const alex = new User('Alex', 21);
 console.log(alex.surname);
 alex.say();
-
