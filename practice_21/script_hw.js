@@ -23,11 +23,12 @@ class User {
         return this.#surname;
     }
     set surname(value) {
-        value = 'GGG';
         this.#surname = value;
         return this.#surname;
     }
 }
 const alex = new User('Alex', 21);
+console.log(alex.surname);
+alex.surname = 'Гусев';
 console.log(alex.surname);
 alex.say();
