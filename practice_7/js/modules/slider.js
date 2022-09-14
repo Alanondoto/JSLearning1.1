@@ -1,4 +1,4 @@
-function slider() {
+function slider({container, slide, nextArrow, prevArrow, totalCount, currentCount, wrapper, field}) {
     // Slider
 
     // const leftSwipe = document.querySelector('.offer__slider-prev'),
@@ -48,15 +48,15 @@ function slider() {
 
     // rightSwipe.addEventListener(('click'), nextSlide);
 
-    const slides = document.querySelectorAll('.offer__slide'),
-            prev = document.querySelector('.offer__slider-prev'),
-            next = document.querySelector('.offer__slider-next'),
-            total = document.querySelector('#total'),
-            current = document.querySelector('#current'),
-            slidesWrapper = document.querySelector('.offer__slider-wrapper'),
-            slidesField = document.querySelector('.offer__slider-inner'),
-            width = window.getComputedStyle(slidesWrapper).width,
-            slider = document.querySelector('.offer__slider');
+    const slides = document.querySelectorAll(slide),
+          prev = document.querySelector(prevArrow),
+          next = document.querySelector(nextArrow),
+          total = document.querySelector(totalCount),
+          current = document.querySelector(currentCount),
+          slidesWrapper = document.querySelector(wrapper),
+          slidesField = document.querySelector(field),
+          width = window.getComputedStyle(slidesWrapper).width,
+          slider = document.querySelector(container);
     let sliderIndex = 1;
     let offset = 0;
 
@@ -212,4 +212,4 @@ function slider() {
     // })
 }
 
-module.exports = slider;
+export default slider;
