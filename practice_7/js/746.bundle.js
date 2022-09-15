@@ -1,0 +1,2 @@
+(self.webpackChunkpractice_7=self.webpackChunkpractice_7||[]).push([[746],{746:function(){window.NodeList&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=function(t,o){o=o||window;for(var e=0;e<this.length;e++)t.call(o,this[e],e,this)})}}]);
+//# sourceMappingURL=746.bundle.js.map
